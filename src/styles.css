@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import bootstrap css from cdn*/
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css);
+
+/* Import fontawesome from cdn */
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+
+/* Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}

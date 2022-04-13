@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GiphyComponent } from './giphy/giphy.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GiphyComponent
   ],
   imports: [
     BrowserModule,
