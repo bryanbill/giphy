@@ -17,7 +17,7 @@ export class Giphy implements GiphyModel {
     this.title = title;
     this.rating = rating;
 
-    console.log(this.url);
+    console.log(this.title);
   }
 
   formattedUrl(url: string): string {
