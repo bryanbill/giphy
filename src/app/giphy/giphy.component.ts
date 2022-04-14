@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./giphy.component.css']
 })
 export class GiphyComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
+ 
 }
