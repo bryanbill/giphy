@@ -11,15 +11,16 @@ export class GifService {
 
   // Get a list of trending GIFs
   getTrendingGifs() {
+    // Paginate results by setting the limit to 25
     return this.http.get(
-      `http://api.giphy.com/v1/gifs/trending?api_key=${this.apiKey}`
+      `http://api.giphy.com/v1/gifs/trending?api_key=${this.apiKey}&limit=25`
     );
   }
 
   // Get a list of GIFs by searching for a keyword
   getGifsByKeyword(keyword: string) {
     return this.http.get(
-      `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${this.apiKey}`
+      `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${this.apiKey}&limit=25`
     );
   }
 }
