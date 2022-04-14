@@ -6,11 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GifService {
   private apiKey = 'jzv82QtHqek4P0S14L6t44d8tPk0ggwA';
-  private http: HttpClient;
 
-  constructor(http: HttpClient) {
-    this.http = http;
-  }
+  constructor(private http: HttpClient) {}
 
   // Get a list of trending GIFs
   getTrendingGifs() {

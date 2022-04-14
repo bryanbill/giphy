@@ -1,11 +1,11 @@
-interface GiphyModel {
+export interface GiphyModel {
   id: string;
   url: string;
   title: string;
   rating: string;
 }
 
-class Giphy implements GiphyModel {
+export class Giphy implements GiphyModel {
   id: string;
   url: string;
   title: string;
