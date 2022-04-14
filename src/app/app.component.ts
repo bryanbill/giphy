@@ -12,10 +12,17 @@ export class AppComponent implements OnInit {
   giphys: GiphyModel[] = [];
   constructor(private gifService: GifService) {}
 
-  search(keyword: string) {
-    this.gifService
-      .getGifsByKeyword(keyword)
-      .subscribe((data) => console.log(data));
+  search(event: KeyboardEvent) {
+    const keyword: string = (event.target as HTMLInputElement).value;
+    this.gifService.getGifsByKeyword(keyword).subscribe((data) => {
+      this.giphys = [];
+      //@ts-ignore
+      data.data.forEach((giphy) => {
+        this.giphys.push(
+          new Giphy(giphy.id, giphy.url, giphy.title, giphy.rating)
+        );
+      });
+    });
   }
   ngOnInit() {
     this.gifService
@@ -24,7 +31,6 @@ export class AppComponent implements OnInit {
       .subscribe((data) =>
         //@ts-ignore
         data.data.forEach((giphy) => {
-        
           this.giphys.push(
             new Giphy(giphy.id, giphy.url, giphy.title, giphy.rating)
           );
