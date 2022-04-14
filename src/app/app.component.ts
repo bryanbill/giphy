@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.gifService
       .getTrendingGifs()
-
       .subscribe((data) =>
         //@ts-ignore
         data.data.forEach((giphy) => {
@@ -36,5 +35,15 @@ export class AppComponent implements OnInit {
           );
         })
       );
+  }
+  loadMore() {
+    this.gifService.getTrendingGifs(this.giphys.length + 24).subscribe((data) =>
+      //@ts-ignore
+      data.data.forEach((giphy) => {
+        this.giphys.push(
+          new Giphy(giphy.id, giphy.url, giphy.title, giphy.rating)
+        );
+      })
+    );
   }
 }
